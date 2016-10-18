@@ -41,13 +41,13 @@ if (app.get('env') === 'development') {
 
 var animal_routes = require('./routes/animal')
 
-var userRoutes = require('./routes/user')
-var user_api_routes = require('./routes/user_api')
+// var userRoutes = require('./routes/user')
+// var user_api_routes = require('./routes/user_api')
 
 app.use('/animal', animal_routes)
 
-app.use('/users', userRoutes)
-app.use('/api/users', user_api_routes)
+// app.use('/users', userRoutes)
+// app.use('/api/users', user_api_routes)
 
 app.listen(process.env.PORT || 4000)
 console.log('Server running at http://localhost:' + port + '/')
