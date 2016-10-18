@@ -2,7 +2,6 @@ var express = require('express')
 var router = express.Router()
 var Animal = require('../models/aniCreate')
 
-
 //GET
 router.get('/', function (req, res) {
 
@@ -21,11 +20,11 @@ router.get('/', function (req, res) {
 //   res.render('animal/new')
 // })
 
-.get('/:id', function (req, res) {
-  res.send('animal\'s ' + req.params.id + ' details')
-}).get('/:id/edit', function (req, res) {
-  res.send('edit animal\'s ' + req.params.id + ' details')
-})
+// .get('/:id', function (req, res) {
+//   res.send('animal\'s ' + req.params.id + ' details')
+// }).get('/:id/edit', function (req, res) {
+//   res.send('edit animal\'s ' + req.params.id + ' details')
+// })
 
 //POST
 //
@@ -64,13 +63,13 @@ router.get('/', function (req, res) {
 // })
 
 //PUT
-router.put('/:id', function (req, res) {
-  res.send('edit animal' + req.params.id)
-})
-
-//DELETE
-router.delete('/:id', function (req, res) {
-  res.send('delete animal' + req.params.id)
-})
+// router.put('/:id', function (req, res) {
+//   res.send('edit animal' + req.params.id)
+// })
+//
+// //DELETE
+// router.delete('/:id', function (req, res) {
+//   res.send('delete animal' + req.params.id)
+// })
 
 module.exports = router
