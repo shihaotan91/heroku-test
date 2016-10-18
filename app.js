@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/animalshelter')
 mongoose.Promise = global.Promise
 
 if(process.env.NODE_ENV === 'production'){
- mongoose.connect('mongodb://chaotarroo:dukemonvsme)d@ds027295.mlab.com:19633/chaotarroo')
+ mongoose.connect('mongodb://chaotarroo:dukemonvsme@ds019633.mlab.com:19633/chaotarroo')
 } else {
  mongoose.connect('mongodb://localhost/animalshelter')
 }
