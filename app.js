@@ -12,6 +12,12 @@ var port = 4000
 mongoose.connect('mongodb://localhost/animalshelter')
 mongoose.Promise = global.Promise
 
+if(process.env.NODE_ENV === 'production'){
+ mongoose.connect('mongodb://chaotarroo:dukemonvsme)d@ds027295.mlab.com:19633/chaotarroo')
+} else {
+ mongoose.connect('mongodb://localhost/animalshelter')
+}
+
 app.use(logger('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('views', path.join(__dirname, 'views'))
@@ -43,5 +49,5 @@ app.use('/animal', animal_routes)
 app.use('/users', userRoutes)
 app.use('/api/users', user_api_routes)
 
-app.listen(4000)
+app.listen(process.env.PORT || 4000)
 console.log('Server running at http://localhost:' + port + '/')
