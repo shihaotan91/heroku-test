@@ -4,7 +4,7 @@ var Animal = require('../models/aniCreate')
 
 
 //GET
-router.get('/index', function (req, res) {
+router.get('/', function (req, res) {
 
   // Signature of a Anima, find
   // Model.find({field}, callback(err, data))
@@ -18,9 +18,9 @@ router.get('/index', function (req, res) {
   })
 })
 
-router.get('/', function (req, res) {
-  res.render('animal/new')
-})
+// router.get('/', function (req, res) {
+//   res.render('animal/new')
+// })
 
 .get('/:id', function (req, res) {
   res.send('animal\'s ' + req.params.id + ' details')
@@ -29,12 +29,12 @@ router.get('/', function (req, res) {
 })
 
 //POST
-
-router.post('/', function (req, res) {
-  Animal.create(req.body.animal, function (err, newAnimal) {
-    res.redirect('animal/index')
-  })
-})
+//
+// router.post('/', function (req, res) {
+//   Animal.create(req.body.animal, function (err, newAnimal) {
+//     res.redirect('animal/index')
+//   })
+// })
 
 // router.post('/', function (req, res) {
 

@@ -40,11 +40,13 @@ if (app.get('env') === 'development') {
 // ############ YOU CAN ADD YOUR CODE BELOW
 
 var animal_routes = require('./routes/animal')
+var animal_api_routes = require('./routes/animal_api')
 
 // var userRoutes = require('./routes/user')
 // var user_api_routes = require('./routes/user_api')
 
 app.use('/animal', animal_routes)
+app.use('/api/animal', animal_api_routes)
 
 // app.use('/users', userRoutes)
 // app.use('/api/users', user_api_routes)
