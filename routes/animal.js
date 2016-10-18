@@ -29,7 +29,14 @@ router.get('/', function (req, res) {
 })
 
 //POST
+
 router.post('/', function (req, res) {
+  Animal.create(req.body.animal, function (err, newAnimal) {
+    res.redirect('animal/index')
+  })
+})
+
+// router.post('/', function (req, res) {
 
   // var newAnimal = new Animal({
   //   breed: req.body.breed,
@@ -39,18 +46,23 @@ router.post('/', function (req, res) {
   //   date: req.body.date
   // })
 
-  Animal.post('/', function (req, res) {
-  User.create(req.body.animal, function (err, newAnimal) {
-    res.json(newAnimal)
-  })
-})
+  // newAnimal.save(function (err) {
+  //   if (err) throw new Error(err)
+  // })
 
-  res.redirect('animal/index')
+//   Animal.post('/', function (req, res) {
+//   Animal.create(req.body.animal, function (err, newAnimal) {
+//     // res.redirect(index/)
+//     res.redirect('animal/index')
+//   })
+// })
+
+  // res.redirect('animal/index')
 
   // res.render('animal/new')
   // res.send(newAnimal)
 
-})
+// })
 
 //PUT
 router.put('/:id', function (req, res) {
