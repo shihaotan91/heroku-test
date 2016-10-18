@@ -9,7 +9,7 @@ var app = express()
 var router = express.Router()
 var port = 4000
 
-mongoose.connect('mongodb://localhost/animalshelter')
+// mongoose.connect('mongodb://localhost/animalshelter')
 mongoose.Promise = global.Promise
 
 if(process.env.NODE_ENV === 'production'){
