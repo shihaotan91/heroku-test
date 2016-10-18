@@ -2,8 +2,6 @@ var express = require('express')
 var router = express.Router()
 var Animal = require('../models/aniCreate')
 
-var Animal = require('../models/animal')
-
 router.get('/', function (req, res) {
   Animal.find({}, function (err, allAnimal) {
     res.json(allAnimal)
