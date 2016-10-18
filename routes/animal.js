@@ -31,17 +31,19 @@ router.get('/', function (req, res) {
 //POST
 router.post('/', function (req, res) {
 
-  var newAnimal = new Animal({
-    breed: req.body.breed,
-    family: req.body.family,
-    name: req.body.name,
-    gender: req.body.gender,
-    date: req.body.date
-  })
+  // var newAnimal = new Animal({
+  //   breed: req.body.breed,
+  //   family: req.body.family,
+  //   name: req.body.name,
+  //   gender: req.body.gender,
+  //   date: req.body.date
+  // })
 
-  newAnimal.save(function (err) {
-    if (err) throw new Error(err)
+  Animal.post('/', function (req, res) {
+  User.create(req.body.animal, function (err, newAnimal) {
+    res.json(newAnimal)
   })
+})
 
   res.redirect('animal/index')
 
