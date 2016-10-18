@@ -9,7 +9,6 @@ router.get('/', function (req, res) {
   // Signature of a Anima, find
   // Model.find({field}, callback(err, data))
   Animal.find({}, function (err, animalArr) {
-    if (err) throw new Error(err)
     console.log(animalArr)
 
     res.render('animal/index', {
