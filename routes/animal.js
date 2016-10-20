@@ -28,11 +28,11 @@ router.get('/', function (req, res) {
 
 //POST
 //
-// router.post('/', function (req, res) {
-//   Animal.create(req.body.animal, function (err, newAnimal) {
-//     res.redirect('animal/index')
-//   })
-// })
+router.post('/', function (req, res) {
+  Animal.create(req.body.animal, function (err, newAnimal) {
+    res.redirect('/animal')
+  })
+})
 
 // router.post('/', function (req, res) {
 

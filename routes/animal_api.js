@@ -7,11 +7,4 @@ router.get('/', function (req, res) {
     res.json(allAnimal)
   })
 })
-
-router.post('/', function (req, res) {
-  Animal.create(req.body.animal, function (err, newAnimal) {
-    res.json(newAnimal)
-  })
-})
-
 module.exports = router

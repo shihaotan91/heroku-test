@@ -1,24 +1,35 @@
-<%# <h2>Create an account</h2>
+<h2>Create an account</h2>
 
-<form method="post" action="/api/user">
+<form class ="createUser">
 
   <div class="form-group">
     <label for="user">Username</label>
-    <input type="text" class="form-control" id="user" name="user[name]" placeholder="Username">
+    <input type="text" class="form-control" id="user" name="user[local][name]" placeholder="Username">
   </div>
 
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="text" class="form-control" id="password" name="user[password]" placeholder="Password">
-  </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="text" class="form-control" id="email" name="user[email]" placeholder="Email">
-  </div>
+    <input type="text" class="form-control" id="email" name="user[local][email]" placeholder="Email">
+
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text" class="form-control" id="password" name="user[local][password]" placeholder="Password">
+    </div>
 
 </div>
 <button type="submit" class="btn btn-default">Create an account</button>
 </form>
 
-<br>%>
+<br>
+
+<ul id="userList">
+    <% userArr.forEach(function(user) { %>
+
+        <li>Name: <%= user.local.name %><br></li>
+        <li>Email: <%= user.local.email %><br></li>
+        <li>Password1: <%= user.local.password %><br></li>
+        <br><br>
+    <% }) %>
+</ul>
